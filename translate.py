@@ -7,12 +7,10 @@ def translate(donor_bytes: BytesIO, translated_bytes: BytesIO) -> BytesIO:
     translated_doc = openPDF(stream=translated_bytes, filetype="pdf")
 
     poster_count = len(donor_doc)
-    print(poster_count)
     for poster_i in range(poster_count):
         pg = donor_doc[poster_i]
         if poster_i > 0:
             translated_doc.insert_pdf(translated_base, to_page=0, start_at=poster_i)
-            print("Made new page on translated!")
         
         qr_rect: Rect = None
         qr_bytes: BytesIO = None
@@ -27,7 +25,6 @@ def translate(donor_bytes: BytesIO, translated_bytes: BytesIO) -> BytesIO:
             break
 
         translated_doc[poster_i].insert_image(qr_rect, stream=qr_bytes)
-        print("Added qr to translated")
     
     return translated_doc.tobytes()
 
