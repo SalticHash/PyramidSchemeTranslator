@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div>
+        <form action="/translate" method="post" target="_blank" enctype=multipart/form-data>
+            <fieldset>
+                <legend>
+                    Translate Your Poster(s)!
+                </legend>
+                
+                <label for="generated_posters">Generated Poster(s)</label>
+                <input type="file" name="generated_posters"/>
+                <label for="translated_poster">Translated Poster Design</label>
+                <input type="file" name="translated_poster"/>
+                
+                <button type="submit" name="translate_posters" value="TranslatePosters">
+                    Translate!
+                </button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

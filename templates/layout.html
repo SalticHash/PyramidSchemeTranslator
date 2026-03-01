@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" data-bs-theme="dark" prefix="og: https://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Meta Tags Generated with https://metatags.io -->
+        <!-- Primary Meta Tags -->
+        <title>Pyramid Scheme Translator</title>
+        <meta name="title" content="Pyramid Scheme Translator" />
+        <meta name="description" content="Translate Hack Club posters into any language!" />
+        <meta name="keywords" content="
+            Hack Club,
+            Posters,
+            Pyramid Scheme
+        ">
+        <meta name="author" content="SalticHash">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pyramid-scheme-translator.vercel.app/" />
+        <meta property="og:title" content="Pyramid Scheme Translator" />
+        <meta property="og:site_name" content="Pyramid Scheme Translator">
+        <meta property="og:description" content="Translate Hack Club posters into any language!" />
+        <meta property="og:image" content="https://pyramid-scheme-translator.vercel.app/static/assets/banner.png" />
+        <meta property="og:image:width" content="1920" />
+        <meta property="og:image:height" content="1080" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://pyramid-scheme-translator.vercel.app/" />
+        <meta property="twitter:title" content="Pyramid Scheme Translator" />
+        <meta property="twitter:description" content="Translate Hack Club posters into any language!" />
+        <meta property="twitter:image" content="https://pyramid-scheme-translator.vercel.app/static/assets/banner.png" />
+    
+        <!-- Banner but tiny :heart: -->
+        <link href="/static/assets/favicon.ico" rel="icon">
+
+        <!-- Styles -->
+        <link href="/static/styles.css" rel="stylesheet">
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <main class="container-fluid py-5" id="main">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="mb-5 small footer-fit">
+            <a href="mailto:saltichash@gmail.com">saltichash@gmail.com</a>
+            <div class="hide-small mx-2">&bull;</div>
+            <a href="https://www.youtube.com/@SalticHash">@SalticHash</a>
+        </footer>
+    </body>
+</html>
