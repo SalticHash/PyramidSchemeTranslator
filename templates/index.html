@@ -37,11 +37,14 @@
 
         <!-- Styles -->
         <link href="/static/styles.css" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script src="static/js/upload.js"></script>
     </head>
 
     <body>
         <h1>Pyramid Sheme Translator <a href="https://github.com/SalticHash/PyramidSchemeTranslator" class="github-link" target="_blank">(github)</a></h1>
-        <form action="/translate" method="post" target="_blank" enctype=multipart/form-data>
+        <div class="form">
             <div class="form-title">
                 Translate Your Poster(s)!
             </div>
@@ -50,22 +53,22 @@
                     <div class="form-file-entry">
                         <label for="generated_posters">Generated Poster(s)</label>
                         <div class="folder-tab">
-                            <input type="file" name="generated_posters" accept=".pdf"/>
+                            <input type="file" name="generated_posters" id="generated_posters" accept=".pdf"/>
                         </div>
                     </div>
                     <div class="form-file-entry">
                         <label for="translated_poster">Translated Poster Design</label>
                         <div class="folder-tab">
-                            <input type="file" name="translated_poster" accept=".pdf"/>
+                            <input type="file" name="translated_poster" id="translated_poster" accept=".pdf"/>
                         </div>
                     </div>
                 </div>
                 
-                <button type="submit" name="translate_posters" value="TranslatePosters" class="form-submit">
+                <button onclick="handleUpload()" name="translate_posters" value="TranslatePosters" class="form-submit">
                     Translate!
                 </button>
             </div>
-        </form>
+        </div>
         <p>If you want you can test it with the premade translation templates!</p>
         <ul>
             <li><b>Printer Efficient (Spanish)</b></li>
