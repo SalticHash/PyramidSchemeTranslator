@@ -1,16 +1,13 @@
 from translate import translate
-import vercel_blob
 from uuid import uuid4
 from dotenv import load_dotenv
-from random import choices
-from string import ascii_letters, digits
 load_dotenv()
 
 # builtins
 from io import BytesIO
 # Flask Imports
 from werkzeug.datastructures import FileStorage
-from flask import Flask, render_template, request, send_file, redirect, Response
+from flask import Flask, render_template, request, send_file, Response
 
 # Configure application
 app = Flask(__name__)
@@ -26,12 +23,12 @@ def tranlate_poster() -> Response:
     
     pdf_bytes = translate(generated_posters.stream.read(), translated_poster.stream.read())
 
-    name = generated_posters.filename.rstrip(".pdf")
-    suffix = "".join(choices(ascii_letters + digits, k = 8))
-    filename = name + "." + suffix + ".pdf"
-    resp = vercel_blob.put(filename, pdf_bytes)
-    
-    return redirect(resp['url'])
+    return send_file(
+        BytesIO(pdf_bytes),
+        mimetype="application/pdf",
+        as_attachment=False,
+        download_name="result.pdf"
+    )
     
 @app.route("/", methods=["GET"])
 def index() -> str:
