@@ -1,29 +1,83 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block main %}
-    <div>
+        <!-- Primary Meta Tags -->
+        <title>Pyramid Scheme Translator</title>
+        <meta name="title" content="Pyramid Scheme Translator" />
+        <meta name="description" content="Translate Hack Club posters into any language!" />
+        <meta name="keywords" content="
+            Hack Club,
+            Posters,
+            Pyramid Scheme
+        ">
+        <meta name="author" content="SalticHash">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://pyramid-scheme-translator.vercel.app/" />
+        <meta property="og:title" content="Pyramid Scheme Translator" />
+        <meta property="og:site_name" content="Pyramid Scheme Translator">
+        <meta property="og:description" content="Translate Hack Club posters into any language!" />
+        <meta property="og:image" content="https://pyramid-scheme-translator.vercel.app/static/assets/banner.png" />
+        <meta property="og:image:width" content="1920" />
+        <meta property="og:image:height" content="1080" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://pyramid-scheme-translator.vercel.app/" />
+        <meta property="twitter:title" content="Pyramid Scheme Translator" />
+        <meta property="twitter:description" content="Translate Hack Club posters into any language!" />
+        <meta property="twitter:image" content="https://pyramid-scheme-translator.vercel.app/static/assets/banner.png" />
+    
+        <!-- Banner but tiny :heart: -->
+        <link href="/static/assets/favicon.ico" rel="icon">
+
+        <!-- Styles -->
+        <link href="/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1>Pyramid Sheme Translator <a href="https://github.com/SalticHash/PyramidSchemeTranslator" class="github-link" target="_blank">(github)</a></h1>
         <form action="/translate" method="post" target="_blank" enctype=multipart/form-data>
-            <fieldset>
-                <legend>
-                    Translate Your Poster(s)!
-                </legend>
+            <div class="form-title">
+                Translate Your Poster(s)!
+            </div>
+            <div class="form-contents">
+                <div class="form-file-entry-container">
+                    <div class="form-file-entry">
+                        <label for="generated_posters">Generated Poster(s)</label>
+                        <div class="folder-tab">
+                            <input type="file" name="generated_posters" accept=".pdf"/>
+                        </div>
+                    </div>
+                    <div class="form-file-entry">
+                        <label for="translated_poster">Translated Poster Design</label>
+                        <div class="folder-tab">
+                            <input type="file" name="translated_poster" accept=".pdf"/>
+                        </div>
+                    </div>
+                </div>
                 
-                <label for="generated_posters">Generated Poster(s)</label>
-                <input type="file" name="generated_posters"/>
-                <label for="translated_poster">Translated Poster Design</label>
-                <input type="file" name="translated_poster"/>
-                
-                <button type="submit" name="translate_posters" value="TranslatePosters">
+                <button type="submit" name="translate_posters" value="TranslatePosters" class="form-submit">
                     Translate!
                 </button>
-            </fieldset>
+            </div>
         </form>
         <p>If you want you can test it with the premade translation templates!</p>
         <ul>
             <li><b>Printer Efficient (Spanish)</b></li>
-            <li><a href="static/translation_templates/es/ConstructPrinterEfficient.pdf">Construct</a></li>
-            <li><a href="static/translation_templates/es/FlavortownPrinterEfficient.pdf">Flavortown</a></li>
+            <li><a href="static/translation_templates/es/ConstructPrinterEfficient.pdf" target="_blank">Construct</a></li>
+            <li><a href="static/translation_templates/es/FlavortownPrinterEfficient.pdf" target="_blank">Flavortown</a></li>
         </ul>
-        
-    </div>
-{% endblock %}
+
+        <footer>
+            <a href="mailto:saltichash@gmail.com" target="_blank">saltichash@gmail.com</a>
+            <div class="hide-small mx-2">&bull;</div>
+            <a href="https://www.youtube.com/@SalticHash" target="_blank">@SalticHash</a>
+        </footer>
+    </body>
+</html>
+

@@ -22,7 +22,8 @@ def tranlate_poster() -> Response:
     translated_poster: FileStorage = request.files["translated_poster"]
     
     pdf_bytes = translate(generated_posters.stream.read(), translated_poster.stream.read())
-
+    if type(pdf_bytes) == str:
+        return error(pdf_bytes, 400)
     return send_file(
         BytesIO(pdf_bytes),
         mimetype="application/pdf",
@@ -34,6 +35,20 @@ def tranlate_poster() -> Response:
 def index() -> str:
     return render_template("index.html")
 
+
+@app.errorhandler(404)
+def page_not_found(_ev):
+    return error("Page not found, It's nowhere to be seen", 404)
+
+@app.errorhandler(405)
+def method_not_allowed(_ev):
+    return error("The method is not allowed for the requested URL.", 405)
+
+def error(text, statuscode = 400):
+    req = {"text": text, "statuscode": statuscode}
+    return render_template("error.html", req=req)
+
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=5454)
+    app.run(port=5454, debug=True)
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=5454)
