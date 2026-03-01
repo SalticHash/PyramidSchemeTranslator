@@ -1,4 +1,18 @@
 # Pyramid Scheme Translator
-Hack Club's Pyramid Scheme program is a lot of fun, but one thing it lacks is translation support for the different posters.
+Move Pyramid Scheme poster QR codes to a translated template!
 
-Using this website you can upload the freshly generated QR code identified posters and a base translated template and the website will generate a translation with all the according QR codes!
+## About
+
+Pyramid Scheme is very fun! What's not fun? Not getting your referrals because your country isn't fluent in English!
+
+This is why I made this tool, you input your poster(s) and a translation template and it will place your fresh QR codes in the translated poster templates.
+Conclusion: Less manual labor and more referrals !
+
+## How to use:
+1. Enter the demo website [here]().
+2. Upload a poster(s) generated from Pyramid Scheme.
+3. Upload a translation template.
+4. Click translate.
+5. Enjoy your localized posters!
+
+You can also find translation templates in the website.
