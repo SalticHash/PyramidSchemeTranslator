@@ -1,15 +1,12 @@
 from translate import translate
 from uuid import uuid4
-from dotenv import load_dotenv
-from os import getenv
 from tempfile_wrapper import put_blob, get_blob, get_bytes
-load_dotenv()
+
 
 # builtins
 from io import BytesIO
 # Flask Imports
-from werkzeug.datastructures import FileStorage
-from flask import Flask, render_template, request, redirect, Response, jsonify
+from flask import Flask, render_template, request, Response
 
 # Configure application
 app = Flask(__name__)
