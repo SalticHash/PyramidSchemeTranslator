@@ -1,4 +1,4 @@
-<img width="1529" height="431" alt="image" src="https://github.com/user-attachments/assets/08ee2745-c9fb-4447-a87b-722dc697fd78" />
+<img width="1525" height="438" alt="image" src="https://github.com/user-attachments/assets/0d2cdf04-0375-447b-b510-09f82d8b0807" />
 Move Pyramid Scheme poster QR codes to a translated template!
 
 ## About
