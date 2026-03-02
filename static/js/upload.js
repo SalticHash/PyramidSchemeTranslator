@@ -21,7 +21,11 @@ async function put_blob(file) {
             throw new Error(result.error);
         }
     } catch (error) {
-        alert('Upload failed:', error.message);
+        if (!error.message) {
+            alert("Upload failed")
+        } else {
+            alert('Upload failed:', error.message);
+        }
     }
     return {"success": false}
 }
@@ -33,10 +37,16 @@ async function handleUpload() {
     button.disabled = true;
     const generatedPosters = document.getElementById("generated_posters").files[0]
     const translatedPoster = document.getElementById("translated_poster").files[0]
+    if (!generatedPosters || !translatedPoster) {
+        alert("Missing file!")
+        button.disabled = false;
+        return
+    }
 
     const generatedPostersURL = await put_blob(generatedPosters)
     const translatedPosterURL = await put_blob(translatedPoster)
     if (!generatedPostersURL.success || !translatedPosterURL.success) {
+        button.disabled = false;
         return
     }
 
