@@ -63,7 +63,7 @@ p {
 .form-title {
     background-color: black;
     color: white;
-    height: 32px;
+    height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,6 +101,11 @@ p {
     border-radius: 0;
     border-top: 4px solid black;
 }
+.form-submit:disabled {
+    color: #ccc;
+    background-color: gray;
+    cursor: progress;
+}
 
 label {
     font-weight: 100;
@@ -115,6 +120,7 @@ ul {
     border-radius: 0 6px 6px 6px;
     border: 4px solid black;
     transition: 0.25s;
+    cursor: pointer;
 }
 
 
