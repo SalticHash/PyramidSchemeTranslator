@@ -1,34 +1,13 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Primary Meta Tags -->
-        <title>Error {{ req.statuscode }}</title>
+{% block title %}Error {{ req.statuscode }}{% endblock %}
 
-        <!-- Banner but tiny :heart: -->
-        <link href="/static/assets/favicon.ico" rel="icon">
+{% block body %}
+    <h2>Error {{ req.statuscode }}!?</h2>
+    <p>{{ req.text }}</p>
+    <img src="/static/assets/errorChihuahua.jpg" class="rounded" alt="A white error chihuahua."
+        style="object-fit: cover; height: 190px; width: 150px;">
 
-        <!-- Styles -->
-        <link href="/static/styles.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <h1>Pyramid Sheme Translator <a href="https://github.com/SalticHash/PyramidSchemeTranslator" class="github-link" target="_blank">(github)</a></h1>
-        
-        <h2>Error {{ req.statuscode }}!?</h2>
-        <p>{{ req.text }}</p>
-        <img src="/static/assets/errorChihuahua.jpg" class="rounded" alt="A white error chihuahua."
-            style="object-fit: cover; height: 190px; width: 150px;">
-
-        <br>
-        <footer>
-            <a href="mailto:saltichash@gmail.com">saltichash@gmail.com</a>
-            <div class="hide-small mx-2">&bull;</div>
-            <a href="https://www.youtube.com/@SalticHash">@SalticHash</a>
-        </footer>
-    </body>
-</html>
-
+    <br>
+{% endblock %}

@@ -34,12 +34,14 @@ async function handleUpload() {
     const button = document.getElementById("translate_posters")
     if (button.disabled) return
 
+    button.innerText = "Wait for Upload...";
     button.disabled = true;
     const generatedPosters = document.getElementById("generated_posters").files[0]
     const translatedPoster = document.getElementById("translated_poster").files[0]
     if (!generatedPosters || !translatedPoster) {
         alert("Missing file!")
         button.disabled = false;
+        button.innerText = "Translate!";
         return
     }
 
@@ -47,6 +49,7 @@ async function handleUpload() {
     const translatedPosterURL = await put_blob(translatedPoster)
     if (!generatedPostersURL.success || !translatedPosterURL.success) {
         button.disabled = false;
+        button.innerText = "Translate!";
         return
     }
 
@@ -61,4 +64,5 @@ async function handleUpload() {
     const url = await response.text()
     window.location = url + "/download";
     button.disabled = false;
+    button.innerText = "Translate!";
 }
